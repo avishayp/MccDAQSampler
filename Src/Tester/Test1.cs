@@ -34,9 +34,9 @@ namespace Tester
 
         private void TestChannel(int channel)
         {
-            double val = (double) Devices[channel].ReadNext();
-            String name = Devices[channel].DisplayName;
-            String res = String.Format("{0}: {1}", name, val);
+            double val = (float) Devices[channel].ReadNext();
+            String name = Devices[channel].ToString();
+            String res = String.Format("{0}, {1}", name, val);
             Console.WriteLine(res);
         }
 
@@ -44,7 +44,7 @@ namespace Tester
         {
             try
             {
-               Board = (MccDAQWrapper)BaseSource.CreateDevice("MccDAQWrapper", "Board " + board, new MccDAQWrapper.MccDAQCfg(board, channels));
+                Board = (MccDAQWrapper)MccDAQWrapper.CreateDevice("MccDAQSampler.MccDAQWrapper", "Board " + board, new MccDAQWrapper.MccDAQCfg(board, channels));
             }
             catch (Exception ex)
             {

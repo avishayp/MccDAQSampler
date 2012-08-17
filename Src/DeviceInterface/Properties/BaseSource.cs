@@ -8,38 +8,6 @@ namespace DeviceInterface
 
     public abstract class BaseSource : IDevice
     {
-        protected static int counter;
-
-        public static IDevice CreateDevice()
-        {
-            return CreateDevice("", "", "");
-        }
-
-        public static IDevice CreateDevice(string _type, string _id, object _cfg)
-        {
-            counter++;
-
-            IDevice retVal = new NULLSource("", "");
-            string typeName = Assembly.GetExecutingAssembly().GetName().Name + "." +
-                                _type.Replace(" ", "");
-
-            if (typeName.Contains(retVal.DisplayName))
-            {
-                return retVal;
-            }
-
-            try
-            {
-                retVal = (IDevice)Activator.CreateInstance(Type.GetType(typeName), new Object[] { _id, _cfg });
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(String.Format("Factory method failed: type={0}, id={1}. ",
-                        _type, _id) + ex.ToString());
-            }
-            return retVal;
-        }
-
         protected BaseSource() { }
 
         protected BaseSource(string _id, Object _cfg)

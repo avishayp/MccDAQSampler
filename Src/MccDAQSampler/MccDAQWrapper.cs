@@ -62,6 +62,28 @@ namespace MccDAQSampler
             m_options = 0;
         }
 
+        public static IDevice CreateDevice(string _type, string _id, object _cfg)
+        {
+            IDevice retVal = new NULLSource("", "");
+            string typeName = _type.Trim();
+
+            if (typeName.Contains(retVal.DisplayName))
+            {
+                return retVal;
+            }
+
+            try
+            {
+                retVal = (IDevice)Activator.CreateInstance(Type.GetType(typeName), new Object[] { _id, _cfg });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(String.Format("Factory method failed: type={0}, id={1}. ",
+                        _type, _id) + ex.ToString());
+            }
+            return retVal;
+        }
+
         public IDevice CreateAndSetChannel(string name, int pin)
         {
             if (pin < 0 || pin >= m_channels.Length)
@@ -69,7 +91,7 @@ namespace MccDAQSampler
                 throw new Exception(String.Format("Unsupported Mcc channel! Pin {0} cannot be assigned to board {1}", pin, BoardNumber));
             }
 
-            m_channels[pin] = CreateDevice("MccDAQChannel", name, this) as MccDAQChannel;
+            m_channels[pin] = CreateDevice("MccDAQSampler.MccDAQChannel", name, this) as MccDAQChannel;
             m_channels[pin].Pin = pin;
             return m_channels[pin];
         }
