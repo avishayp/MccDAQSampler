@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{2164476F-9E03-4E04-9F70-B5A196DBFBDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MccDAQSampler", "MccDAQSampler\MccDAQSampler.csproj", "{512DA12E-B27A-49D0-98FE-DEE03FF0B49F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeviceInterface", "DeviceInterface\DeviceInterface.csproj", "{2B278224-0863-4CBF-8E4C-4A424D12A3CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2164476F-9E03-4E04-9F70-B5A196DBFBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2164476F-9E03-4E04-9F70-B5A196DBFBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2164476F-9E03-4E04-9F70-B5A196DBFBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2164476F-9E03-4E04-9F70-B5A196DBFBDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{512DA12E-B27A-49D0-98FE-DEE03FF0B49F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{512DA12E-B27A-49D0-98FE-DEE03FF0B49F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{512DA12E-B27A-49D0-98FE-DEE03FF0B49F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{512DA12E-B27A-49D0-98FE-DEE03FF0B49F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B278224-0863-4CBF-8E4C-4A424D12A3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B278224-0863-4CBF-8E4C-4A424D12A3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B278224-0863-4CBF-8E4C-4A424D12A3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B278224-0863-4CBF-8E4C-4A424D12A3CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
